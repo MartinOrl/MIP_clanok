@@ -31,7 +31,7 @@
 \maketitle
 
 \begin{abstract}
-\ldots
+Strojové učenie sa v posledných rokoch čoraz viac spomína či už vo vedeckých prácach, alebo v rôznych článkoch, zameraných na technológie. Či už ide o niečo jednoduché, ako aplikácie na telefóny, alebo o vysoko pokročilé technológie ako autonómne jazdenie a počítačové videnie. V mojej práci by som sa chcel zamerať na rôzne modely strojového učenia, ako napr. lineárna regresia, Boltzmannove stroje alebo transformátory, na ich praktické a najefektívnejšie využitie, napríklad pri spracovávaní veľkého množstva údajov, spracovávaní jazyka (NLP) alebo počítačovom videní a klasifikácii, a na slabé miesta a nevýhody týchto modelov. Rád by som taktiež jednoducho opísal aj už existujúci systém, ako algoritmus GPT-3 vyvinutý nadáciou OpenAI, a možnosti jeho využitia.
 \end{abstract}
 
 
@@ -48,13 +48,29 @@ Z obr.~\ref{f:rozhod} je všetko jasné.
 
 \begin{figure*}[tbh]
 \centering
-%\includegraphics[scale=1.0]{diagram.pdf}
-Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
-\caption{Rozhodujúci argument.}
+\includegraphics[scale=1.0]{diagram.pdf}
+\caption{Diagram 1}
+\paragraph{Poznámka} Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
+
 \label{f:rozhod}
 \end{figure*}
 
+\hfil
+\includegraphics[scale=1.0, angle=90]{diagram.pdf}
+\hfil
+\includegraphics[scale=1.0]{diagram.pdf}
+\hfil
 
+\paragraph{Úvod} V tejto časti je popísaný úvod k práci s krátkym popisom
+
+\section{Tabuľka} \label{časť textu}
+
+\begin{tabular}{lc}
+Metódy inžinierskej práce & 2000 \\
+Procedurálne programovanie & 3000 \\
+Matematická analýza & 4000 \\
+Anglický jazyk & 7000 \\
+\end{tabular}
 
 \section{Iná časť} \label{ina}
 
@@ -64,28 +80,6 @@ Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dok
 
 
 \subsection{Nejaké vysvetlenie} \label{ina:nejake}
-
-Niekedy treba uviesť zoznam:
-
-\begin{itemize}
-\item jedna vec
-\item druhá vec
-	\begin{itemize}
-	\item x
-	\item y
-	\end{itemize}
-\end{itemize}
-
-Ten istý zoznam, len číslovaný:
-
-\begin{enumerate}
-\item jedna vec
-\item druhá vec
-	\begin{enumerate}
-	\item x
-	\item y
-	\end{enumerate}
-\end{enumerate}
 
 
 \subsection{Ešte nejaké vysvetlenie} \label{ina:este}
