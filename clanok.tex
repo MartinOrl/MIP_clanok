@@ -7,13 +7,16 @@
 \usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{titlesec}
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
 
 \usepackage{cite}
 %\usepackage{times}
+\titlespacing{\subsection}
+{0pt}{2ex}{2ex}
 
-\pagestyle{headings}
+
 
 \title{Metódy strojového učenia a ich praktické použitie\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Ing. Fedor Lehocki}} 
 
@@ -22,7 +25,7 @@
 	{\small Fakulta informatiky a informačných technológií}\\
 	}
 
-\date{\small 11. oktober 2021} 
+\date{\small 6. november 2021} 
 
 
 
@@ -30,55 +33,60 @@
 
 \maketitle
 
+\newpage
+
 \begin{abstract}
-Strojové učenie sa v posledných rokoch čoraz viac spomína či už vo vedeckých prácach, alebo v rôznych článkoch, zameraných na technológie. Či už ide o niečo jednoduché, ako aplikácie na telefóny, alebo o vysoko pokročilé technológie ako autonómne jazdenie a počítačové videnie. V mojej práci by som sa chcel zamerať na rôzne modely strojového učenia, ako napr. lineárna regresia, Boltzmannove stroje alebo transformátory, na ich praktické a najefektívnejšie využitie, napríklad pri spracovávaní veľkého množstva údajov, spracovávaní jazyka (NLP) alebo počítačovom videní a klasifikácii, a na slabé miesta a nevýhody týchto modelov. Rád by som taktiež jednoducho opísal aj už existujúci systém, ako algoritmus GPT-3 vyvinutý nadáciou OpenAI, a možnosti jeho využitia.
+Strojové učenie sa v posledných rokoch čoraz viac spomína či už vo vedeckých prácach, alebo v rôznych článkoch, zameraných na technológie. Či už ide o niečo jednoduché, ako aplikácie na telefóny, alebo o vysoko pokročilé technológie ako autonómne jazdenie a počítačové videnie.\newline \hspace*{0.4cm} V mojej práci by som sa chcel zamerať na rôzne modely strojového učenia, ako napr. lineárna regresia, Boltzmannove stroje alebo transformátory, na ich praktické a najefektívnejšie využitie, napríklad pri spracovávaní veľkého množstva údajov, spracovávaní jazyka (NLP) alebo počítačovom videní a klasifikácii, a na slabé miesta a nevýhody týchto modelov. Rád by som taktiež jednoducho opísal aj už existujúci systém, ako algoritmus GPT-3 vyvinutý nadáciou OpenAI, a možnosti jeho využitia.
 \end{abstract}
-
-
-
-
-
 
 \section{Úvod} \label {uvod}
 Strojové učenie je typ umelej inteligencie, pri ktorom softvér predpovedá výsledok nejakej operácie presnejšie. Strojové učenie sa zameriava na aplikácie a systémy, ktoré sa "učia" z veľkého množstva údajov a vylepšujú vďaka nim po nejakom čase svoju presnosť, namiesto toho aby boli natvrdo naprogramované. Je veľmi nápomocný hlavne pri praktických úlohách, pri ktorých sa može učiť zo získaných údajov. Typickým príkladom môže byť predpoveď počasia alebo analýza medicínskych snímok pri diagnostike rakoviny.
 Čím viac údajov sa do systému strojového učenia vloží, tým viac je daný systém presnejší. Strojové učenie je aplikované  v dnešnej dobe takmer všade. Používa sa v robotike, virtuálnych asistentoch (Google, Siri, Alexa), hrách, spracovávaní jazyka a textu, odporúčania produktov v online obchodoch, analýza nákupov zákazníka, vyhľadávačoch (Google Search), detekcia podvodov, boti (Chatbot), filtrovanie spamu a taktiež aj v socíalnych sieťach. 
-Existujú dve hlavné metódy strojového učenia, a to Supervised Learning (učenie s dohľadom niekoho, kto kontroluje výstupy systému) a Unsupervised Learning (stroj kontroluje výstupy sám). Každý z týchto systémov má svoje výhody a aj nevýhody. Týmto rozdeleniam sa budem venovať v následujúcich sekciách.
+Existujú dve hlavné metódy strojového učenia, a to Supervised Learning (priradzuje vstupný údaj k výstupu a kontroluje či je výstup modelu správny) a Unsupervised Learning (stroj kontroluje výstupy sám). Každý z týchto systémov má svoje výhody a aj nevýhody.
 
 \subsection{Motivácia} \label{motivacia}
+\newpage
+\section{Regresia} 
+\subsection{Lineárna regresia}
+Lineárna regresia je prístup typu Supervised Learning, čiže stroj kontroluje svoje výstupy oproti už daným výstupným údajom. Medzi jej výhody patrí jej jednoduchosť na pochopenie a taktiež schopnosť následne vylepšovať pomocou nových údajov. Tento model je skvelou voľbou pre každého, kto chce začať s dátovou analýzou a strojovým učením. \cite{8862451}
 
-\section{Základy strojového učenia} \label{základy}
-
-\section{Regresia} \label{regresia}
-\subsection{Lineárna regresia} \label{linearnareg}
 \subsection{Decision tree}
+Ide o v celku populárny model strojového učenia, ktorý sa používa pri strategickom plánovaní a strojovom učení. Každý štvorec z obrázku sa nazýva uzol, a čím viac uzlov sa v danom strome nachádza, tým viac je tento model presnejší. V praxi je jednoduché vybudovať decision tree model, no jeho nedostatkom je jeho presnosť
 \subsection{Random Forest}
-\subsection{Neurónová sieť}
+\subsection{Neurónová sieť} 
+Neurónová sieť je v jednoduchom pojímaní len sieť matematických rovníc. Delí sa na tri základné časti, a to vstupná vrstva, ktorá prijíma údaje, potom následuje skrytá vrstva a na záver výstupná vrstva. Každý uzol v skrytej vrstve predstavuje zároveň lineárnu funkciu a tzv. aktivačnú funkciu.
 
-\section{Klasifikácia} \label{regresia}
-\subsection{Logická regresia} \label{logickareg}
-\subsection{Support Vector Machine}
+\newpage
+\section{Klasifikácia}
+\subsection{Logická regresia}
+Logická regresia funguje podobne ako lineárna regresia, ale používa sa na modelovanie určitého množstva výsledkov, zvyčajne dvoch. V jednoduchosti, logická rovnica používaná pri tomto modeli je vytvorená tak, že výstupná hodnota je vždy medzi hodnotami 0 a 1;
+
 \subsection{Naive Bayes}
-\subsection{Neurónová sieť}
-
+Naive Bayes je jedným z populárnych klasifikátorov používaným v strojovom učení. Hlavnou ideou za týmto modelom je Bayesova veta.
+\begin{equation}
+ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)}
+\end{equation}
+Výhody tohto modelu sú jednoduchá implementácia, skvelý výkon, dokáže pracovať s nižším objemom údajov, dokáže pracovať s binárnou a viactriednou klasifikáciou a vytvárať pravdepodobnostné predpovede. \newline \hspace*{0.4cm} Modely strojového učenia, ktoré sú riadne natrénované a optimalizované väčšinou prekonajú modely typu Naive Bayes. \cite{8862451}
+\subsection{Boltzmannov stroj}
+\newpage
 \section{Praktické využitie strojového učenia} \label{vyuzitie}
+\subsection{Každodenné použitie}
 \subsection{Medicína}
 \subsection{Spracovávanie dát}
-\subsection{Poľnohospodárstvo}
-\subsection{Automatizácia}
 \subsection{Autopilot}
+\subsection{Model GPT-3}
+Model GPT-3 bol vytvorený výskumnym laboratóriom OpenAI, ktorého cieľom je vytvoriť priateľskú umelú inteligenciu, ktorá by ľudom pomáhala.\cite{GPT3} Ide o model hlbokého učenia, ktorý sa prevažne používa pri spracovávaní  prirodzeného jazyka a počítačovom videní. Transformátory pracujú s určitou sekvenciou dát, ktorá sa ale nemusí spracovávať zaradom, ako pri iných modeloch.\newline \hspace*{0.4cm} Systém GPT-3, ako už jeho názov naznačuje, je v poradí treťou generáciou tohto modelu v podaní OpenAI. Jeho cieľom je vytvárať text, ktorý je bežným ľudským okom prakticky nerozoznateľný od textu ktorý by napísal človek. A tento text sa generuje len z nejakého jednoduchého vstupu, ktorý používateľ zadá. Pri trénovaní podobných algoritmov sa bežne používa obrovská databáza slov, v tomto prípade išlo o 175 miliard slov.
 
-\section{Model GPT-3} \label{gpt}
 
-\section{Diskusia} \label{diskusia}
-
+\newpage
 \section{Záver} \label{zaver} % prípadne iný variant názvu
-
+\subsection{Diskusia} \label{diskusia}
 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
 
 
 % týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
-%\bibliography{literatura}
-%\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
+\bibliography{literatura}
+\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
 \end{document}
